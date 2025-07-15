@@ -1,0 +1,22 @@
+[2025-06-28T09:44:27.539+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: user_full_etl_pipeline.run_etl manual__2025-06-28T09:44:26.528351+00:00 [queued]>
+[2025-06-28T09:44:27.543+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: user_full_etl_pipeline.run_etl manual__2025-06-28T09:44:26.528351+00:00 [queued]>
+[2025-06-28T09:44:27.543+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 1
+[2025-06-28T09:44:27.549+0000] {taskinstance.py:2192} INFO - Executing <Task(_PythonDecoratedOperator): run_etl> on 2025-06-28 09:44:26.528351+00:00
+[2025-06-28T09:44:27.552+0000] {standard_task_runner.py:60} INFO - Started process 1067 to run task
+[2025-06-28T09:44:27.554+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'user_full_etl_pipeline', 'run_etl', 'manual__2025-06-28T09:44:26.528351+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/user_etl_dag.py', '--cfg-path', '/tmp/tmp1h47ixp1']
+[2025-06-28T09:44:27.555+0000] {standard_task_runner.py:88} INFO - Job 6: Subtask run_etl
+[2025-06-28T09:44:27.565+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-06-28T09:44:27.584+0000] {task_command.py:423} INFO - Running <TaskInstance: user_full_etl_pipeline.run_etl manual__2025-06-28T09:44:26.528351+00:00 [running]> on host fd578cca3b29
+[2025-06-28T09:44:27.624+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='user_full_etl_pipeline' AIRFLOW_CTX_TASK_ID='run_etl' AIRFLOW_CTX_EXECUTION_DATE='2025-06-28T09:44:26.528351+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-28T09:44:26.528351+00:00'
+[2025-06-28T09:44:27.625+0000] {functions.py:72} INFO - Starting full ETL process...
+[2025-06-28T09:44:27.625+0000] {functions.py:16} INFO - Extracting user data from https://jsonplaceholder.typicode.com/users...
+[2025-06-28T09:44:27.786+0000] {functions.py:21} INFO - Successfully extracted 10 users.
+[2025-06-28T09:44:27.787+0000] {functions.py:29} INFO - Transforming 10 users...
+[2025-06-28T09:44:27.789+0000] {functions.py:46} INFO - Transformation complete.
+[2025-06-28T09:44:27.789+0000] {functions.py:51} INFO - Loading DataFrame to CSV at /opt/***/dags/data/final_users.csv...
+[2025-06-28T09:44:27.794+0000] {functions.py:59} INFO - Successfully saved DataFrame with 10 rows to /opt/***/dags/data/final_users.csv.
+[2025-06-28T09:44:27.794+0000] {functions.py:81} INFO - Full ETL process completed successfully.
+[2025-06-28T09:44:27.794+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-06-28T09:44:27.799+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=user_full_etl_pipeline, task_id=run_etl, execution_date=20250628T094426, start_date=20250628T094427, end_date=20250628T094427
+[2025-06-28T09:44:27.821+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-06-28T09:44:27.830+0000] {taskinstance.py:3281} INFO - 0 downstream tasks scheduled from follow-on schedule check
